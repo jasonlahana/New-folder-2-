@@ -1,0 +1,125 @@
+<!doctype html><html><head><style type="text/css">  .sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%
+  }
+
+  li {
+    margin: 0 3px 3px 3px;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    font-size: 1.4em;
+    height: 18px;    
+  } 
+
+h2 {
+  margin-bottom: 0;
+}   
+
+.column {
+  column-count: 3;
+  margin-top: 50px;
+}
+
+.sortable li {
+  background-color: blue;
+  color: white;
+}
+
+.answers li {
+  background-color: black;
+  color: black;
+}
+
+.answers-revealed li {
+  background-color: white;
+}</style></head><body><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery UI Sortable - Default functionality</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<h1>Flash Cards</h1>
+<div class="column">
+	<h2>Math</h2>
+	<p>Rearrange the answers in the middle to match the questions on the left.</p>
+	<p>Click the button to reveal the correct answers.</p>
+	<button id="math-button">Reveal</button>
+
+
+	<ul class="questions">
+		<li class="ui-state-default">4 * 100 = ?</li>
+		<li class="ui-state-default">2 + 5 + 8 = ?</li>
+		<li class="ui-state-default">19 - 7 = ?</li>
+		<li class="ui-state-default">10 ÷ 100 = ?</li>
+		<li class="ui-state-default">14 + 40 = ?</li>
+	</ul>
+
+	<ul class="sortable">
+		<li class="ui-state-default">400</li>
+		<li class="ui-state-default">15</li>
+		<li class="ui-state-default">12</li>
+		<li class="ui-state-default">1/10</li>
+		<li class="ui-state-default">54</li>
+	</ul>
+
+	<ul class="answers">
+		<li class="ui-state-default">400</li>
+		<li class="ui-state-default">15</li>
+		<li class="ui-state-default">12</li>
+		<li class="ui-state-default">1/10</li>
+		<li class="ui-state-default">54</li>
+	</ul>
+
+</div>
+
+<h3>Science</h3>
+<p>Rearrange the answers in the middle to match the questions on the left.</p>
+<p>Click the button to reveal the correct answers.</p>
+<button id="science-button">Reveal</button>
+
+
+<ul class="questions">
+	<li class="ui-state-default">ScienceQuestion1</li>
+	<li class="ui-state-default">ScienceQuestion2</li>
+	<li class="ui-state-default">ScienceQuestion3</li>
+	<li class="ui-state-default">ScienceQuestion4</li>
+	<li class="ui-state-default">ScienceQuestion5</li>
+</ul>
+
+<ul class="sortable">
+	<li class="ui-state-default">ScienceAnswer1</li>
+	<li class="ui-state-default">ScienceAnswer2</li>
+	<li class="ui-state-default">ScienceAnswer3</li>
+	<li class="ui-state-default">ScienceAnswer4</li>
+	<li class="ui-state-default">ScienceAnswer5</li>
+</ul>
+
+<ul class="answers">
+	<li class="ui-state-default">ScienceAnswer1</li>
+	<li class="ui-state-default">ScienceAnswer2</li>
+	<li class="ui-state-default">ScienceAnswer3</li>
+	<li class="ui-state-default">ScienceAnswer4</li>
+	<li class="ui-state-default">ScienceAnswer5</li>
+</ul>
+  
+</div><script type="text/javascript">$(function () {
+  $(".sortable").sortable();
+});
+
+$("#math-button").click(function () {
+  $(".answers").effect("bounce");
+  $(".answers").addClass("answers-revealed");
+  $(".answers").removeClass("answers");
+});
+
+</script></body><html>
